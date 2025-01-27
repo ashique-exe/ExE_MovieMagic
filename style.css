@@ -1,0 +1,208 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gothic+A1:wght@400;700&display=swap');
+
+:root {
+    --neon-blue: #00f3ff;
+    --hot-pink: #ff0066;
+    --cyber-purple: #bc13fe;
+    --matrix-green: #00ff41;
+    --dark-bg: #0a0a0a;
+    --main-font: 'Bebas Neue', Impact, sans-serif;
+    --secondary-font: 'Gothic A1', Arial, sans-serif;
+}
+
+/* Background and Blur Effect */
+.stApp {
+    background-size: cover;
+    background-position: center;
+}
+
+.stApp::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+/* Punk/Gothic Header Styles */
+.header {
+    font-family: var(--main-font);
+    text-align: center;
+    color: var(--neon-blue);
+    text-shadow: 0 0 15px var(--neon-blue);
+    margin-bottom: 2rem;
+    letter-spacing: 4px;
+}
+
+.main-title {
+    font-size: 7.3rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    line-height: 0.9;
+    text-stroke: 1.5px var(--hot-pink);
+    -webkit-text-stroke: 1.2px var(--hot-pink);
+}
+
+.sub-title {
+    font-size: 4rem;
+    color: var(--hot-pink);
+    text-shadow: 0 0 15px var(--hot-pink);
+    margin-bottom: 1rem;
+    -webkit-text-stroke: 0.6px var(--matrix-green);
+}
+
+.version {
+    font-size: 3rem;
+    color: var(--matrix-green);
+    text-shadow: 0 0 20px var(--matrix-green);
+    margin: 1rem 0;
+    position: relative;
+    display: inline-block;
+    padding: 0 2rem;
+}
+
+.version::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -15px;
+    height: 4px;
+    background: linear-gradient(90deg,
+        var(--neon-blue) 0%,
+        var(--hot-pink) 50%,
+        var(--cyber-purple) 100%);
+}
+
+.subhead {
+    font-family: var(--secondary-font);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--cyber-purple);
+    text-shadow: 0 0 10px var(--cyber-purple);
+    margin: 2rem 25%;
+    padding-left: 1.5rem;
+    border-left: 4px solid var(--matrix-green);
+    text-transform: uppercase;
+}
+
+/* Movie Card Styles */
+.movie-card {
+    border: 2px solid var(--neon-blue);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px) rotate(1deg);
+    box-shadow: 0 0 25px var(--hot-pink),
+                0 0 35px var(--neon-blue),
+                0 0 45px var(--cyber-purple);
+}
+
+.movie-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+        transparent,
+        var(--neon-blue),
+        transparent,
+        var(--hot-pink));
+    animation: borderFlow 4s linear infinite;
+    opacity: 0.3;
+}
+
+/* Watch Now Button Styles */
+.watch-now-button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--dark-bg);
+    color: var(--neon-blue);
+    text-decoration: none;
+    border: 2px solid var(--neon-blue);
+    border-radius: 0;
+    text-align: center;
+    cursor: pointer;
+    margin: 5px;
+    font-family: var(--main-font);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 0 15px var(--neon-blue),
+                0 0 25px var(--cyber-purple);
+    font-size: 1.1rem;
+}
+
+.watch-now-button:hover {
+    color: var(--hot-pink);
+    box-shadow: 0 0 25px var(--hot-pink),
+                0 0 35px var(--cyber-purple);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes labelFloat {
+    0%, 100% { transform: translateY(-15px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes borderFlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Scan Line Animation */
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--neon-blue), var(--hot-pink));
+    animation: scan 1.5s infinite;
+    z-index: 999;
+}
+
+/* Rating Badge Styles */
+.rating-badge {
+    background: rgba(255, 0, 102, 0.3);
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 1px solid var(--hot-pink);
+    font-family: var(--secondary-font);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Poster Image Styles */
+.poster-image {
+    border-radius: 5px;
+    border: 2px solid var(--matrix-green);
+}
