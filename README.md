@@ -6,7 +6,7 @@
 
 A smart movie recommendation system powered by machine learning. Discover films based on your preferences!
 
-✨ **Live Demo**: [Try it here!](https://your-app-url.com) <!-- Add your deployment link -->
+✨ **Live Demo**: [Try it here!](https://exe-moviemagic.onrender.com/)<!-- Add your deployment link -->
 
 ---
 
