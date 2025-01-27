@@ -1,4 +1,6 @@
 # 🎬 Movie Recommendation App
+![Screenshot From 2025-01-27 16-13-57](https://github.com/user-attachments/assets/312a0214-77fb-44d9-9d94-1e1352ea45a8)
+![Screenshot From 2025-01-27 16-15-55](https://github.com/user-attachments/assets/98a530a0-7e35-4fc5-be24-f11159fb35de)
 
 ![App Screenshot](screenshots/app-demo.png) <!-- Add your screenshot path here -->
 
